@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container text-center fs-4 my-5">
+</div>
+
+<form method="post" action="/uwc"></form>
+<div class="container d-none d-xl-block d-lg-block">
+    {% for data in desktop_summary_all_uwc %}
+    <div class="row">
+        <div class="col card mx-2 my-2 px-0" style="width: 22rem">
+            <img src={{all_uwc_img_src[list_uwc.index(data[0][0])]}} class="card-img-top" style="object-fit: cover; overflow:hidden; height: 15rem" alt="...">
+            <div class="card-body">
+                <form method="post" action="/uwc">
+                    <input type="text" name="view_detail" value={{data[0][0]}} hidden>
+                    <input type="text" name="safety_check1" value={{data[0][1]}} hidden>
+                    <input type="text" name="safety_check3" value={{data[0][3]}} hidden>
+                    <input type="text" name="safety_check5" value={{data[0][5]}} hidden>
+                    <button type="submit" class="btn btn-outline-dark btn-lg mb-3">{{data[0][0]}}</button>
+                </form>
+                <h6 class="card-text my-1">A total of {{data[0][1]}} scholars</h6>
+                <h6 class="card-text my-1 ">{{data[0][3]}}% at {{data[0][2]}}</h6>
+                <h6 class="card-text my-1 ">{{data[0][5]}}% from {{data[0][4]}}</h6>
+            </div>
+        </div>
+        <div class="col card mx-2 my-2 px-0" style="width: 22rem">
+            <img src={{all_uwc_img_src[list_uwc.index(data[1][0])]}} class="card-img-top" style="object-fit: cover; overflow:hidden; height: 15rem" alt="...">
+            <div class="card-body">
+                <form method="post" action="/uwc">
+                    <input type="text" name="view_detail" value={{data[1][0]}} hidden>
+                    <input type="text" name="safety_check1" value={{data[1][1]}} hidden>
+                    <input type="text" name="safety_check3" value={{data[1][3]}} hidden>
+                    <input type="text" name="safety_check5" value={{data[1][5]}} hidden>
+                    <button type="submit" class="btn btn-outline-dark btn-lg mb-3">{{data[1][0]}}</button>
+                </form>
+                <h6 class="card-text my-1">A total of {{data[1][1]}} scholars</h6>
+                <h6 class="card-text my-1 ">{{data[1][3]}}% at {{data[1][2]}}</h6>
+                <h6 class="card-text my-1 ">{{data[1][5]}}% from {{data[1][4]}}</h6>
+            </div>
+        </div>
+        <div class="col card mx-2 my-2 px-0" style="width: 22rem">
+            <img src={{all_uwc_img_src[list_uwc.index(data[2][0])]}} class="card-img-top" style="object-fit: cover; overflow:hidden; height: 15rem" alt="...">
+            <div class="card-body">
+                <form method="post" action="/uwc">
+                    <input type="text" name="view_detail" value={{data[2][0]}} hidden>
+                    <input type="text" name="safety_check1" value={{data[2][1]}} hidden>
+                    <input type="text" name="safety_check3" value={{data[2][3]}} hidden>
+                    <input type="text" name="safety_check5" value={{data[2][5]}} hidden>
+                    <button type="submit" class="btn btn-outline-dark btn-lg mb-3">{{data[2][0]}}</button>
+                </form>
+                <h6 class="card-text my-1">A total of {{data[2][1]}} scholars</h6>
+                <h6 class="card-text my-1 ">{{data[2][3]}}% at {{data[2][2]}}</h6>
+                <h6 class="card-text my-1 ">{{data[2][5]}}% from {{data[2][4]}}</h6>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+<div class="container d-none d-md-block d-lg-none">
+    {% for data in tablet_summary_all_uwc %}
+    <div class="row">
+        <div class="col card mx-2 my-2 px-0" style="width: 22rem">
+            <img src={{all_uwc_img_src[list_uwc.index(data[0][0])]}} class="card-img-top" style="object-fit: cover; overflow:hidden; height: 15rem" alt="...">
+            <div class="card-body">
+                <form method="post" action="/uwc">
+                    <input type="text" name="view_detail" value={{data[0][0]}} hidden>
+                    <input type="text" name="safety_check1" value={{data[0][1]}} hidden>
+                    <input type="text" name="safety_check3" value={{data[0][3]}} hidden>
+                    <input type="text" name="safety_check5" value={{data[0][5]}} hidden>
+                    <button type="submit" class="btn btn-outline-dark btn-lg mb-3">{{data[0][0]}}</button>
+                </form>
+                <h6 class="card-text my-1">A total of {{data[0][1]}} scholars</h6>
+                <h6 class="card-text my-1 ">{{data[0][3]}}% at {{data[0][2]}}</h6>
+                <h6 class="card-text my-1 ">{{data[0][5]}}% from {{data[0][4]}}</h6>
+            </div>
+        </div>
+        <div class="col card mx-2 my-2 px-0" style="width: 22rem">
+            <img src={{all_uwc_img_src[list_uwc.index(data[1][0])]}} class="card-img-top" style="object-fit: cover; overflow:hidden; height: 15rem" alt="...">
+            <div class="card-body">
+                <form method="post" action="/uwc">
+                    <input type="text" name="view_detail" value={{data[1][0]}} hidden>
+                    <input type="text" name="safety_check1" value={{data[1][1]}} hidden>
+                    <input type="text" name="safety_check3" value={{data[1][3]}} hidden>
+                    <input type="text" name="safety_check5" value={{data[1][5]}} hidden>
+                    <button type="submit" class="btn btn-outline-dark btn-lg mb-3">{{data[1][0]}}</button>
+                </form>
+                <h6 class="card-text my-1">A total of {{data[1][1]}} scholars</h6>
+                <h6 class="card-text my-1 ">{{data[1][3]}}% at {{data[1][2]}}</h6>
+                <h6 class="card-text my-1 ">{{data[1][5]}}% from {{data[1][4]}}</h6>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+<div class="container d-block d-md-none">
+    {% for data in phone_summary_all_uwc %}
+    <div class="row">
+        <div class="col card mx-5 my-3 px-0" style="width: 22rem">
+            <img src={{all_uwc_img_src[list_uwc.index(data[0])]}} class="card-img-top" style="object-fit: cover; overflow:hidden; height: 15rem" alt="...">
+            <div class="card-body">
+                <form method="post" action="/uwc">
+                    <input type="text" name="view_detail" value={{data[0]}} hidden>
+                    <input type="text" name="safety_check1" value={{data[1]}} hidden>
+                    <input type="text" name="safety_check3" value={{data[3]}} hidden>
+                    <input type="text" name="safety_check5" value={{data[5]}} hidden>
+                    <button type="submit" class="btn btn-outline-dark btn-lg mb-3">{{data[0]}}</button>
+                </form>
+                <h6 class="card-text my-1">A total of {{data[1]}} scholars</h6>
+                <h6 class="card-text my-1 ">{{data[3]}}% at {{data[2]}}</h6>
+                <h6 class="card-text my-1 ">{{data[5]}}% from {{data[4]}}</h6>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+{% endblock content %}

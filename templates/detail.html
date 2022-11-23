@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div align="center" class="pt-5 mt-5">
+        <button type="submit" class="btn btn-outline-dark btn-lg mb-3">
+            <h2>{{detail_of[0]}}</h2>
+        </button>
+    </div>
+
+       
+    {% if charts %}
+    <div id="line_chart" class="chart"></div>
+    <div id="bart10_chart" class="chart"></div>
+    <div id="bart05_chart" class="chart"></div>
+
+    {% else %}
+        <h1 align="center" class="my-5 pt-5">No Data</h1>
+    {% endif %}
+
+{% endblock content %}
+
+
+{% block javascript %}
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/javascript">
+        var line_chart = {{line_chart_JSON | safe}};
+        Plotly.plot('line_chart',line_chart,{});
+        
+        var bart10_chart = {{bart10_chart_JSON | safe}};
+        Plotly.plot('bart10_chart',bart10_chart,{});
+
+        var bart05_chart = {{bart05_chart_JSON | safe}};
+        Plotly.plot('bart05_chart',bart05_chart,{});
+    </script>
+{% endblock %}

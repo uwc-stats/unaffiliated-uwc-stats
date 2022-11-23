@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!-- Filter form-->
+<div class="content-section">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Filter Davis Scholars</legend>
+
+            <div class="form-group">
+                {{ form.name.label(class="form-control-label") }}
+                {{ form.name(class="form-control form-control-lg") }}
+            </div>
+            <div class="form-group">
+                {{ form.country.label(class="form-control-label") }}
+                {{ form.country(class="form-control form-control-lg") }}
+            </div>
+            <div class="form-group">
+                {{ form.uwc.label(class="form-control-label") }}
+                {{ form.uwc(class="form-control form-control-lg") }}
+            </div>
+            <div class="form-group">
+                {{ form.school.label(class="form-control-label") }}
+                {{ form.school(class="form-control form-control-lg") }}
+            </div>
+            <div class="form-group">
+                {{ form.year.label(class="form-control-label") }}
+                {{ form.year(class="form-control form-control-lg") }}
+            </div>
+        </fieldset>
+
+        <div class="form-group mt-2 mb-4">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+
+    </form>
+</div>
+
+
+{% if need_correction == True %}
+<table class="tablet my-5">
+    <tbody>
+        <tr>
+            <td class="mx-5 pe-4">
+                Top match data <br>
+                <span class="fs-6">(Click </span>
+                <span class="fs-6 fw-bold"> "Filter Data"</span>
+                <span class="fs-6"> to reload correction)</span>
+            </td>
+      
+            <td>
+                <button type="button" class="btn btn-success">{{combine_correction}}</button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+{% endif %}
+
+
+
+
+<!-- Display table from input filter-->
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Country</th>
+        <th scope="col">UWC</th>
+        <th scope="col">School</th>
+        <th scope="col">Year</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for scholar in scholars %}
+            <tr>
+            {% for detail in scholar %}
+                    <td>{{detail}}</td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}

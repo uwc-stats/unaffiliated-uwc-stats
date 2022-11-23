@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block disclaimer %}
+<div class="nav-bar my-5" style="background-color: red;">
+    <p align="center" class="text-light fw-bold">Not affiliated with United World College</p>
+</div>
+{% endblock disclaimer %}
+
+
+{% block content %}
+
+<div class="my-5">
+    <p>E-mail us: unaffiliated.uwc.stats@gmail.com</p>
+</div>
+    
+<div class="my-5">
+    <p>Raw data taken from : </p>
+    <a href="https://www.davisuwcscholars.org/scholars/annual-reports">United The World Annual Reports</a>
+    <p>Class of 2004 - Class of 2022</p>
+</div>
+
+<div class="my-5">
+    <p>We ran the raw data into our algorithm to divide each scholar into four groups of</p>
+    <li>Country</li>
+    <li>UWC atteneded</li>
+    <li>Undergraduate Destination</li>
+</div>
+
+<div class="my-5">
+    <p>What exactly does the algorithm do? </p>
+    <p>The algorithm cleans up the raw misspelled or variant words to a known keyword.</p>
+
+    <table class="table">
+        <thead align="center">
+            <tr>
+              <th scope="col">Raw</th>
+              <th scope="col"></th>
+              <th scope="col">Keyword</th>
+            </tr>
+          </thead>
+        <tbody align="center">
+            <tr>
+                <td>Lewis & Clark College</td>
+                <td>-></td>
+                <td>Lewis and Clark College</td>
+            </tr>
+            <tr>
+                <td>Vietnam</td>
+                <td>-></td>
+                <td>Viet Nam</td>
+            </tr>
+            <tr>
+                <td>UWC South East Asia</td>
+                <td>-></td>
+                <td>South East Asia</td>
+            </tr>
+            <tr>
+                <td>Massachusetts Institute of Technology</td>
+                <td>-></td>
+                <td>MIT</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<div class="my-5">
+    <p>How do we choose the keyword?</p>
+
+    <div class="my-3">
+        <li>Country keywords are taken from ISO 3166 through the python library pycountry 22.3.5</li>
+        <p>Minor manual correction are needed for data with previous country name such as "Swaziland" to "Eswatini".</p>
+        <p class="mb-0">To accurately reflect the raw data, we have to manually add in additional keywords to the accomand for some geographical region(s). </p>
+        <p class="mt-0">We do not intend to be offend, deceive or misrepresent any party. Please contact us for constructive feedback regarding appropriate update for these keywords.</p>
+    </div>
+
+    <div class="my-3">
+        <li>Undergraduate destination keywords are taken from running the raw data and picking out the first distinct appearing name</li>
+    </div>
+
+    <div class="my-3">
+        <li>UWC keywords are manually selected from the official website:</li>
+        <p>"UWC Atlantic",
+            "Pearson",
+            "South East Asia",
+            "Waterford Kamhlada Southern Africa",
+            "USA",
+            "Adriatic",
+            "Li Po Chun",
+            "Red Cross Nordic",
+            "Costa Rica",
+            "Mostar",
+            "Maastricht",
+            "Robert Bosch",
+            "Dilijan",
+            "Changshu China",
+            "Thailand",
+            "ISAK Japan",
+            "East Africa",
+            "Simon Bolivar UWC of Africulture"
+            .
+        </p>
+    </div>
+
+</div>
+
+<div class="my-5">
+    <p>*Images are automatically selected using Selenium for ease in navigativing the webpage and have not been carefully reviewed. We do not intend to offend, deceive, or misrepresent any party Please contact us for constructive feedback regarding appropriate update for these images. </p>
+</div>
+
+
+
+{% endblock content %}
